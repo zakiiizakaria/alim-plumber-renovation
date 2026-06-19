@@ -9,7 +9,7 @@ export const COMPANY = {
   address:
     "Jalan Sulaiman 1, Taman Putra Sulaiman, 68000 Ampang, Selangor",
   tagline:
-    "Trusted local plumber & renovation contractor — rapid emergency response, kerja kemas, and harga boleh bincang across Ampang & Selangor.",
+    "Tukang paip & kontraktor renovation trusted — emergency 24/7, kerja kemas, harga boleh bincang di Ampang & Selangor.",
   serviceAreas: [
     "Ampang",
     "Cheras",
@@ -23,65 +23,65 @@ export const COMPANY = {
 
 export const MAJOR_SERVICES = [
   {
-    title: "Roofing & Structural Truss Overhauls",
-    subtitle: "Ubah Suai Bumbung / Kekuda",
+    title: "Ubah Suai Bumbung & Kekuda",
+    subtitle: "Roofing & Structural Truss",
     description:
-      "Roof repairs, truss reinforcement, and structural upgrades for terrace and landed homes.",
+      "Baiki bumbung, perkukuh kekuda, dan upgrade struktur untuk rumah teres dan landed.",
   },
   {
-    title: "Waterproofing & Slab Rehabilitation",
-    subtitle: "Sleb Bocor · Torch-on Membrane",
+    title: "Waterproofing & Baiki Slab",
+    subtitle: "Torch-on Membrane · Slab Bocor",
     description:
-      "Torch-on membrane waterproofing, slab leak treatment, and long-lasting moisture barrier systems.",
+      "Pasang torch-on membrane, rawat slab bocor, dan sistem moisture barrier yang tahan lama.",
   },
   {
-    title: "Masonry & Countertops",
-    subtitle: "Pasang Tiles / Concrete Kitchen Top",
+    title: "Tiles & Table Top Concrete",
+    subtitle: "Masonry · Kitchen Counter",
     description:
-      "Custom concrete kitchen counter table tops, tile installation, and precision wet-area masonry.",
+      "Custom concrete table top dapur, pasang tiles, dan kerja masonry wet-area yang precise.",
   },
   {
-    title: "Interior & Exterior Painting",
-    subtitle: "Cat Rumah Penuh / Touch-Up",
+    title: "Cat Rumah Penuh / Touch-Up",
+    subtitle: "Interior & Exterior Painting",
     description:
-      "Full-house repainting and targeted touch-ups with clean, even finishes — kerja kemas guaranteed.",
+      "Cat seluruh rumah atau touch-up targeted — finishing rata dan kemas, dijamin.",
   },
 ] as const
 
 export const EMERGENCY_SERVICES = [
   {
-    title: "Mechanical Line Unclogging",
-    subtitle: "Paip / Sinki Sumbat",
+    title: "Buka Sumbatan Paip / Sinki",
+    subtitle: "Mechanical Line Unclogging",
     description:
-      "Fast clearance of blocked pipes, sinks, and floor traps — on-site within hours.",
+      "Clear paip, sinki, dan floor trap tersumbat dengan cepat — on-site dalam beberapa jam.",
   },
   {
-    title: "Internal Leaking Repair",
-    subtitle: "Paip Dalam Dinding Bocor",
+    title: "Baiki Paip Bocor Dalam Dinding",
+    subtitle: "Internal Leaking Repair",
     description:
-      "Detection and repair of concealed pipe leaks inside walls with minimal disruption.",
+      "Detect dan repair paip bocor tersembunyi dalam dinding — minimal gangguan.",
   },
   {
-    title: "Water Tank & Meter Overhaul",
-    subtitle: "Tangki Air Polytank / Meter Paip",
+    title: "Tukar Tangki Air & Meter",
+    subtitle: "Polytank / Meter Paip",
     description:
-      "Polytank replacement, float valve servicing, and meter line repairs for steady water flow.",
+      "Ganti polytank, servis float valve, dan repair meter line untuk aliran air stabil.",
   },
   {
-    title: "Door & Fitting Swaps",
-    subtitle: "Tukar Pintu / Aksesori",
+    title: "Tukar Pintu & Aksesori",
+    subtitle: "Door & Fitting Swaps",
     description:
-      "Door replacements, hinge fixes, lock swaps, and general fitting adjustments.",
+      "Ganti pintu, betulkan engsel, tukar kunci, dan adjustment fitting am.",
   },
 ] as const
 
 export const DISPATCH_CATEGORY_LABELS = {
   emergency_plumbing: "Emergency Plumbing (Paip Sumbat / Bocor)",
-  renovation_inspection: "Free Renovation Inspection",
+  renovation_inspection: "Inspection Renovation Percuma",
 } as const
 
 export const PROPERTY_TYPE_LABELS = {
-  condo: "Condo / Apartment",
-  terrace: "Terrace / Landed House",
-  shop_office: "Shop / Office",
+  condo: "Kondo / Apartment",
+  terrace: "Teres / Rumah Landed",
+  shop_office: "Kedai / Pejabat",
 } as const

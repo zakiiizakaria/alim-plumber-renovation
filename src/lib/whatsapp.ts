@@ -7,30 +7,30 @@ import type { DispatchCategory, LeadFormData } from "@/types/lead"
 
 export function formatLeadMessage(data: LeadFormData): string {
   return [
-    `Hi ${COMPANY.shortName},`,
+    `Salam ${COMPANY.shortName},`,
     "",
-    "📋 *SERVICE REQUEST CHECKLIST*",
+    "📋 *BORANG PERMINTAAN SERVIS*",
     "━━━━━━━━━━━━━━━━━━━━━━━━",
     "",
-    "☑️ *Client Name:*",
+    "☑️ *Nama:*",
     data.name.trim(),
     "",
-    "☑️ *Service Dispatch Category:*",
+    "☑️ *Kategori Servis:*",
     DISPATCH_CATEGORY_LABELS[data.dispatchCategory],
     "",
-    "☑️ *Specific Area:*",
+    "☑️ *Kawasan:*",
     data.area.trim(),
     "",
-    "☑️ *Property Architecture:*",
+    "☑️ *Jenis Hartanah:*",
     PROPERTY_TYPE_LABELS[data.propertyType],
     "",
-    "☑️ *Job Description:*",
+    "☑️ *Penerangan Kerja:*",
     data.description.trim(),
     "",
     "━━━━━━━━━━━━━━━━━━━━━━━━",
-    `📍 *Base:* ${COMPANY.address}`,
+    `📍 *Lokasi:* ${COMPANY.address}`,
     "",
-    "Sent via ALIM Plumber & Renovation website.",
+    "Dihantar melalui website ALIM Plumber & Renovation.",
   ].join("\n")
 }
 
@@ -52,23 +52,23 @@ export function buildQuickWhatsAppUrl(
 ): string {
   const message =
     text ??
-    `Hi ${COMPANY.shortName}, I need assistance with a plumbing / renovation job in ${COMPANY.serviceAreas[0]}.`
+    `Salam ${COMPANY.shortName}, saya perlukan bantuan plumbing / renovation di ${COMPANY.serviceAreas[0]}.`
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 }
 
 export function buildEmergencyWhatsAppUrl(): string {
   return buildQuickWhatsAppUrl(
     [
-      `Hi ${COMPANY.shortName},`,
+      `Salam ${COMPANY.shortName},`,
       "",
-      "🚨 *EMERGENCY PLUMBING REQUEST*",
+      "🚨 *PERMINTAAN EMERGENCY PLUMBING*",
       "",
-      "☑️ *Dispatch Category:* Emergency Plumbing (Paip Sumbat / Bocor)",
-      "☑️ *Urgency:* Immediate assistance required",
+      "☑️ *Kategori:* Emergency Plumbing (Paip Sumbat / Bocor)",
+      "☑️ *Urgency:* Perlukan bantuan segera",
       "",
-      "Please advise your earliest available slot.",
+      "Mohon maklumkan slot terawal yang available.",
       "",
-      "Sent via ALIM Plumber & Renovation website.",
+      "Dihantar melalui website ALIM Plumber & Renovation.",
     ].join("\n")
   )
 }

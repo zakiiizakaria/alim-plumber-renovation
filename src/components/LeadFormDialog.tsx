@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react"
-import { ClipboardList, Send } from "lucide-react"
+import { ClipboardList, Send, MapPin, Home, MessageSquare, User } from "lucide-react"
 
 import { BrandMark } from "@/components/BrandMark"
 import { Button } from "@/components/ui/button"
@@ -52,8 +52,8 @@ export function LeadFormDialog({
   open: controlledOpen,
   onOpenChange,
   defaultDispatchCategory = "renovation_inspection",
-  title = "Request Free Renovation Inspection",
-  description = "Complete the checklist below and we will respond on WhatsApp with availability and a tailored quote.",
+  title = "Tanya Bajet & Pemeriksaan Percuma",
+  description = "Sila isi butiran di bawah. Team ALIM akan hubungi anda semula melalui WhatsApp dengan anggaran harga & slot pemeriksaan.",
 }: LeadFormDialogProps) {
   const [internalOpen, setInternalOpen] = useState(false)
   const [form, setForm] = useState<LeadFormData>({
@@ -104,38 +104,51 @@ export function LeadFormDialog({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       {trigger ? <DialogTrigger render={trigger} /> : null}
-      <DialogContent className="max-h-[90svh] overflow-y-auto sm:max-w-lg">
-        <DialogHeader>
-          <BrandMark variant="header" className="mb-1" />
-          <DialogTitle className="flex items-center gap-2 text-lg">
-            <ClipboardList className="size-5 text-primary" aria-hidden="true" />
+      <DialogContent className="max-h-[92svh] overflow-y-auto sm:max-w-xl border-t-4 border-t-brand-accent p-6 sm:p-8 gap-6 rounded-2xl bg-white shadow-2xl">
+        <DialogHeader className="gap-2.5 pb-2 border-b border-slate-100">
+          <div className="flex items-center justify-between">
+            <BrandMark variant="header" className="mb-0" />
+            <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-brand-orange/10 px-2.5 py-0.5 text-[10px] font-black text-brand-orange uppercase tracking-wider">
+              Fast Response
+            </span>
+          </div>
+          <DialogTitle className="flex items-center gap-2 text-xl font-extrabold text-brand-primary tracking-tight mt-2">
+            <ClipboardList className="size-5 text-brand-accent" aria-hidden="true" />
             {title}
           </DialogTitle>
-          <DialogDescription>{description}</DialogDescription>
+          <DialogDescription className="text-sm text-muted-foreground leading-relaxed">
+            {description}
+          </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="grid gap-4" noValidate>
+        <form onSubmit={handleSubmit} className="grid gap-6 mt-2" noValidate>
+          {/* Full Name */}
           <div className="grid gap-2">
-            <Label htmlFor="lead-name">Full Name</Label>
+            <Label htmlFor="lead-name" className="flex items-center gap-1.5 font-bold text-slate-800">
+              <User className="size-4 text-brand-primary" />
+              Nama Penuh
+            </Label>
             <Input
               id="lead-name"
               name="name"
               autoComplete="name"
-              placeholder="Your name"
+              placeholder="Masukkan nama anda"
+              className="h-11 rounded-xl border-slate-200 focus-visible:ring-brand-accent"
               value={form.name}
               onChange={(e) => updateField("name", e.target.value)}
               aria-invalid={Boolean(errors.name)}
             />
             {errors.name ? (
-              <p className="text-xs text-destructive">{errors.name}</p>
+              <p className="text-xs text-destructive font-semibold">{errors.name}</p>
             ) : null}
           </div>
 
-          <fieldset className="grid gap-2">
-            <legend className="text-sm font-medium">
-              Service Dispatch Category
+          {/* Service Dispatch Category */}
+          <fieldset className="grid gap-3">
+            <legend className="text-sm font-bold text-slate-800 mb-1">
+              Kategori Servis
             </legend>
-            <div className="grid gap-2">
+            <div className="grid gap-2.5">
               {(
                 Object.entries(DISPATCH_CATEGORY_LABELS) as [
                   DispatchCategory,
@@ -145,10 +158,10 @@ export function LeadFormDialog({
                 <label
                   key={value}
                   className={cn(
-                    "flex cursor-pointer items-start gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors",
+                    "flex cursor-pointer items-start gap-3 rounded-xl border p-3.5 text-sm transition-all duration-200 select-none",
                     form.dispatchCategory === value
-                      ? "border-primary bg-primary/5 text-foreground"
-                      : "border-border hover:border-primary/40"
+                      ? "border-brand-accent bg-brand-accent/5 ring-1 ring-brand-accent text-slate-900 shadow-sm"
+                      : "border-slate-200 hover:border-brand-accent/40 bg-white"
                   )}
                 >
                   <input
@@ -157,26 +170,31 @@ export function LeadFormDialog({
                     value={value}
                     checked={form.dispatchCategory === value}
                     onChange={() => updateField("dispatchCategory", value)}
-                    className="mt-0.5 accent-[oklch(0.6_0.25_280)]"
+                    className="mt-0.5 size-4 accent-brand-accent shrink-0"
                   />
-                  {label}
+                  <span className="font-semibold text-slate-800 leading-snug">{label}</span>
                 </label>
               ))}
             </div>
             {errors.dispatchCategory ? (
-              <p className="text-xs text-destructive">
+              <p className="text-xs text-destructive font-semibold">
                 {errors.dispatchCategory}
               </p>
             ) : null}
           </fieldset>
 
+          {/* Specific Area */}
           <div className="grid gap-2">
-            <Label htmlFor="lead-area">Specific Area</Label>
+            <Label htmlFor="lead-area" className="flex items-center gap-1.5 font-bold text-slate-800">
+              <MapPin className="size-4 text-brand-primary" />
+              Kawasan / Lokasi
+            </Label>
             <Input
               id="lead-area"
               name="area"
               list="service-areas"
-              placeholder="e.g. Ampang, Cheras, Cyberjaya"
+              placeholder="cth: Ampang, Cheras, Kajang, Semenyih"
+              className="h-11 rounded-xl border-slate-200 focus-visible:ring-brand-accent"
               value={form.area}
               onChange={(e) => updateField("area", e.target.value)}
               aria-invalid={Boolean(errors.area)}
@@ -187,15 +205,17 @@ export function LeadFormDialog({
               ))}
             </datalist>
             {errors.area ? (
-              <p className="text-xs text-destructive">{errors.area}</p>
+              <p className="text-xs text-destructive font-semibold">{errors.area}</p>
             ) : null}
           </div>
 
-          <fieldset className="grid gap-2">
-            <legend className="text-sm font-medium">
-              Property Architecture
+          {/* Property Architecture */}
+          <fieldset className="grid gap-3">
+            <legend className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
+              <Home className="size-4 text-brand-primary" />
+              Jenis Rumah
             </legend>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
               {(
                 Object.entries(PROPERTY_TYPE_LABELS) as [
                   PropertyArchitecture,
@@ -205,10 +225,10 @@ export function LeadFormDialog({
                 <label
                   key={value}
                   className={cn(
-                    "flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors",
+                    "flex cursor-pointer items-center justify-center gap-2 rounded-xl border p-3 text-center text-sm transition-all duration-200 select-none",
                     form.propertyType === value
-                      ? "border-primary bg-primary/5 text-foreground"
-                      : "border-border hover:border-primary/40"
+                      ? "border-brand-accent bg-brand-accent/5 ring-1 ring-brand-accent text-slate-900 shadow-sm"
+                      : "border-slate-200 hover:border-brand-accent/40 bg-white"
                   )}
                 >
                   <input
@@ -217,37 +237,43 @@ export function LeadFormDialog({
                     value={value}
                     checked={form.propertyType === value}
                     onChange={() => updateField("propertyType", value)}
-                    className="accent-[oklch(0.6_0.25_280)]"
+                    className="accent-brand-accent size-3.5"
                   />
-                  <span className="text-xs sm:text-sm">{label}</span>
+                  <span className="font-semibold text-slate-800 text-xs sm:text-sm">{label}</span>
                 </label>
               ))}
             </div>
             {errors.propertyType ? (
-              <p className="text-xs text-destructive">{errors.propertyType}</p>
+              <p className="text-xs text-destructive font-semibold">{errors.propertyType}</p>
             ) : null}
           </fieldset>
 
+          {/* Job Description */}
           <div className="grid gap-2">
-            <Label htmlFor="lead-description">Job Description</Label>
+            <Label htmlFor="lead-description" className="flex items-center gap-1.5 font-bold text-slate-800">
+              <MessageSquare className="size-4 text-brand-primary" />
+              Keterangan Kerja / Masalah
+            </Label>
             <Textarea
               id="lead-description"
               name="description"
               rows={4}
-              placeholder="Describe the leak, renovation scope, or urgency..."
+              placeholder="Ceritakan detail kerja atau kerosakan (cth: waterproofing bilik air bocor / nak pecah dinding dapur / paip sinki sumbat)..."
+              className="rounded-xl border-slate-200 focus-visible:ring-brand-accent resize-y p-3.5 text-sm"
               value={form.description}
               onChange={(e) => updateField("description", e.target.value)}
               aria-invalid={Boolean(errors.description)}
             />
             {errors.description ? (
-              <p className="text-xs text-destructive">{errors.description}</p>
+              <p className="text-xs text-destructive font-semibold">{errors.description}</p>
             ) : null}
           </div>
 
-          <DialogFooter className="border-0 bg-transparent p-0 sm:justify-stretch">
-            <Button type="submit" size="lg" className="w-full gap-2">
+          {/* Dialog Footer */}
+          <DialogFooter className="border-0 bg-transparent p-0 mt-2 sm:justify-stretch">
+            <Button type="submit" size="lg" className="w-full h-12 gap-2.5 rounded-xl font-bold bg-brand-accent text-white hover:bg-brand-accent/90 shadow-md shadow-brand-accent/25 hover:shadow-lg hover:scale-[1.01] active:scale-98 transition-all duration-200 cursor-pointer">
               <Send className="size-4" aria-hidden="true" />
-              Submit via WhatsApp
+              Hantar via WhatsApp
             </Button>
           </DialogFooter>
         </form>

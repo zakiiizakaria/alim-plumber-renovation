@@ -4,25 +4,25 @@ export function validateLeadForm(data: LeadFormData): LeadFormErrors {
   const errors: LeadFormErrors = {}
 
   if (!data.name.trim()) {
-    errors.name = "Please enter your name."
+    errors.name = "Sila isi nama anda."
   }
 
   if (!data.dispatchCategory) {
-    errors.dispatchCategory = "Please select a dispatch category."
+    errors.dispatchCategory = "Sila pilih kategori servis di atas."
   }
 
   if (!data.area.trim()) {
-    errors.area = "Please enter your specific area."
+    errors.area = "Sila masukkan kawasan / lokasi anda."
   }
 
   if (!data.propertyType) {
-    errors.propertyType = "Please select a property type."
+    errors.propertyType = "Sila pilih jenis rumah anda."
   }
 
   if (!data.description.trim()) {
-    errors.description = "Please describe the job or issue."
+    errors.description = "Sila nyatakan masalah paip atau skop renovation anda."
   } else if (data.description.trim().length < 10) {
-    errors.description = "Please provide at least 10 characters."
+    errors.description = "Sila tulis sekurang-kurangnya 10 aksara supaya kami mudah memahami masalah anda."
   }
 
   return errors
@@ -31,3 +31,4 @@ export function validateLeadForm(data: LeadFormData): LeadFormErrors {
 export function hasErrors(errors: LeadFormErrors): boolean {
   return Object.keys(errors).length > 0
 }
+

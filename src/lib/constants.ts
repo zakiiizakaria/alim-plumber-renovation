@@ -26,20 +26,20 @@ export { localizedProjectsList as PORTFOLIO_ITEMS } from "@/lib/copy"
 export const TRUST_ITEMS = [
   {
     title: "Kerja Kemas",
-    subtitle: "100% Post-Job Clean Up",
+    subtitle: "Bersih 100% Selepas Siap",
     description:
-      "We leave zero residual debris, stains, or mess — your space is spotless when we finish.",
+      "Tiada sisa sampah, kesan kotoran atau habuk — tapak kerja bersih selepas kami selesai.",
   },
   {
     title: "Kerja Cepat",
-    subtitle: "Rapid 24/7 Mobilization",
+    subtitle: "Dispatch 24/7",
     description:
-      "High-speed dispatch for plumbing emergencies — burst pipes, clogged lines, and hidden leaks.",
+      "Tindakan pantas untuk kecemasan paip — pecah, sumbat, atau kebocoran tersembunyi.",
   },
   {
-    title: "Harga Boleh Bincang",
-    subtitle: "Budget-Friendly Quotes",
+    title: "Harga Boleh Dirunding",
+    subtitle: "Mengikut Bajet Anda",
     description:
-      "Flexible pricing tailored for middle-income residential areas — transparent, no hidden charges.",
+      "Kadar harga yang fleksibel untuk kawasan kediaman — telus, tanpa kos tersembunyi.",
   },
 ] as const

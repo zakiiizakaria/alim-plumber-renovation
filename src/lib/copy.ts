@@ -1,59 +1,58 @@
 /** ALIM Plumber & Renovation — canonical copy & content datasets */
 
 export const heroCopyVariantA = {
-  overline:
-    "Ampang-Based Contractor · 24/7 Emergency Dispatch · Selangor & Putrajaya Coverage",
+  overline: "",
   headline:
-    "Paip Bocor, Renovation Rumah — ALIM Selesaikan Cepat, Kemas & Boleh Bincang",
+    "Paip Bocor? Ingin Renovate? Kami Selesaikan Cepat.",
   subheadline:
-    "ALIM Plumber & Renovation is your trusted local team for emergency plumbing dispatch and full wet-works renovation — from torch-on membrane waterproofing and tangki air polytank overhauls to custom concrete kitchen counter table tops across Ampang, Cheras, Kajang, Semenyih, Putrajaya & Cyberjaya.",
-  primaryCta: "WhatsApp Emergency Dispatch",
-  secondaryCta: "Get Renovation Quote",
+    "ALIM — tukang paip & kontraktor renovation yang anda boleh harapkan. Kecemasan 24/7, kerja kemas, harga boleh dirunding.",
+  primaryCta: "WhatsApp Sekarang",
+  secondaryCta: "Minta Sebut Harga",
 } as const
 
 export const localizedProjectsList = [
   {
     id: "torch-on-ampang",
-    title: "Torch-on Membrane Waterproofing",
+    title: "Waterproofing Torch-on Membrane",
     location: "Taman Putra Sulaiman, Ampang",
-    category: "Major Wet Works",
+    category: "Projek Besar",
     scope:
-      "Flat roof & bathroom slab torch-on membrane application with full surface preparation and seam sealing.",
+      "Pemasangan torch-on membrane di bumbung rata & slab bilik air — persediaan permukaan sepenuhnya dan kemasan rapi semua sambungan.",
     outcome:
-      "Zero recurring seepage after monsoon season — kerja kemas with full debris removal on completion.",
+      "Selepas musim hujan, terbukti tiada kebocoran. Kawasan dibersihkan sepenuhnya, tiada sisa sampah tinggal.",
     icon: "droplets" as const,
   },
   {
     id: "polytank-cheras",
-    title: "Tangki Air Polytank Overhaul",
+    title: "Tukar Tangki Air Polytank",
     location: "Bandar Mahkota Cheras, Cheras",
-    category: "Emergency & Maintenance",
+    category: "Penyelenggaraan & Kecemasan",
     scope:
-      "Polytank replacement, float valve upgrade, inlet/outlet piping connection and pressure testing.",
+      "Penukaran polytank baharu, menaik taraf float valve, menyambung paip inlet/outlet dan menguji tekanan air.",
     outcome:
-      "Stable water pressure restored same day — backed by Official Work Performance Warranty.",
+      "Tekanan air stabil — selesai pada hari yang sama. Kerja disertakan waranti.",
     icon: "cylinder" as const,
   },
   {
     id: "kitchen-kajang",
-    title: "Custom Concrete Kitchen Counter Table Top",
+    title: "Table Top Concrete Dapur Custom",
     location: "Taman Kajang Perdana, Kajang",
-    category: "Major Renovation",
+    category: "Projek Ubah Suai",
     scope:
-      "On-site cast custom concrete kitchen counter table top with tile edge finish and plumbing cut-outs.",
+      "Pemasangan concrete table top dapur secara on-site, lengkap dengan kemasan tepi jubin serta pemotongan lubang sinki & paip.",
     outcome:
-      "Durable countertop delivered on schedule — harga boleh bincang honoured, site left spotless.",
+      "Table top kukuh, siap tepat pada masanya. Harga mengikut bajet anda dan tapak kerja dibersihkan.",
     icon: "utensils" as const,
   },
   {
     id: "pipe-semenyih",
-    title: "Internal Wall Pipe Leak Repair",
+    title: "Baiki Paip Bocor Dalam Dinding",
     location: "Taman Semenyih Mewah, Semenyih",
-    category: "Emergency Repair",
+    category: "Pembaikan Kecemasan",
     scope:
-      "Concealed pipe leak detection, targeted wall hacking, pipe section replacement and patch reinstatement.",
+      "Mengesan paip bocor tersembunyi, memotong dinding secara bersasar, menukar bahagian paip dan menampal semula.",
     outcome:
-      "Leak sealed with post-fix warranty — no stain, dust, or debris left behind post job.",
+      "Kebocoran diselesaikan dengan waranti. Tiada kesan kotoran atau habuk selepas kerja siap.",
     icon: "pipette" as const,
   },
 ] as const
@@ -64,49 +63,49 @@ export const authenticTestimonials = [
     location: "Ampang, Selangor",
     rating: 5,
     quote:
-      "Paip dalam dinding bocor tengah malam — ALIM dispatch cepat, siap kerja kemas. Warranty badge memang buat saya tenang.",
+      "Paip dalam dinding bocor tengah malam — ALIM datang cepat, kerja sangat kemas. Waranti kerja membuatkan saya tenang.",
   },
   {
     name: "Puan Sharifah",
     location: "Kajang, Selangor",
     rating: 5,
     quote:
-      "Custom concrete kitchen counter table top cantik dan kukuh. Harga boleh bincang, tiada caj surprise. Highly recommended.",
+      "Table top concrete dapur cantik dan kukuh. Harga boleh dirunding, tiada caj tersembunyi. Amat disyorkan.",
   },
   {
     name: "Mr. Chong Wei",
     location: "Cheras, Selangor",
     rating: 5,
     quote:
-      "Tangki air polytank tukar dalam sehari. Team professional, area bersih selepas siap — exactly as promised.",
+      "Tangki air polytank ditukar dalam sehari. Team profesional, kawasan bersih selepas kerja siap — seperti yang dijanjikan.",
   },
   {
     name: "Encik Amiruddin",
     location: "Semenyih, Selangor",
     rating: 5,
     quote:
-      "Torch-on membrane waterproofing untuk bumbung — lepas hujan heavy tak bocor lagi. Kerja cepat, kerja kemas, puas hati.",
+      "Torch-on membrane waterproofing untuk bumbung — tiada lagi kebocoran walaupun hujan lebat. Kerja cepat dan memuaskan.",
   },
 ] as const
 
 export const trustSignalsCopy = {
-  overline: "Our Guarantees",
-  headline: "Built-in trust — before we even start the job",
+  overline: "Jaminan Kami",
+  headline: "Kerja kami dijamin — malah sebelum kami bermula lagi",
   subheadline:
-    "Every ALIM dispatch is backed by two non-negotiable policies that protect your home and your peace of mind.",
+    "Setiap tugasan ALIM dilindungi dua polisi tetap — demi ketenangan fikiran anda.",
   signals: [
     {
       id: "warranty",
-      title: "Official Work Performance Warranty",
+      title: "Waranti Kerja Rasmi",
       description:
-        "Every plumbing repair and wet-work job is covered by our Official Work Performance Warranty. If the same issue returns within the warranty period, we return and rectify at no extra charge — no excuses, no runaround.",
+        "Setiap pembaikan paip dan kerja wet-work disertakan Waranti Kerja Rasmi. Jika masalah sama berulang dalam tempoh waranti, kami datang baiki secara percuma — tanpa sebarang alasan.",
       icon: "shield" as const,
     },
     {
       id: "cleanup",
-      title: "100% Post-Job Clean Up Policy",
+      title: "Polisi Bersih 100% Selepas Siap",
       description:
-        "Our 100% Post-Job Clean Up Policy means zero residual debris, stains, or dust when we leave. We bag all waste, wipe down surfaces, and restore your space to a move-in-ready condition — kerja kemas, guaranteed.",
+        "Polisi Bersih 100% bermaksud tiada sisa sampah, kesan kotoran, atau habuk selepas kami selesai kerja. Kami mengemas semua bahan buangan, mengelap permukaan, dan memulihkan ruang anda — kerja dijamin kemas.",
       icon: "sparkles" as const,
     },
   ],
@@ -115,20 +114,20 @@ export const trustSignalsCopy = {
 export const technicalFaqs = [
   {
     question:
-      "How does the Official Work Performance Warranty cover returning leaks?",
+      "Bagaimanakah Waranti Kerja Rasmi melindungi saya jika kebocoran berulang?",
     answer:
-      "If a leak we repaired reoccurs at the same point within the warranty window, ALIM returns to inspect and rectify at no additional labour charge. This applies to internal pipe repairs, slab waterproofing, and tangki air connection works — giving you documented protection against recurring failures.",
+      "Jika kebocoran yang kami telah baiki berulang di tempat yang sama dalam tempoh waranti, ALIM akan datang memeriksa dan membaiki semula — tanpa caj tambahan. Ini meliputi pembaikan paip dalaman, waterproofing slab, dan kerja sambungan tangki air.",
   },
   {
-    question: "What exactly is included in the 100% Post-Job Clean Up Policy?",
+    question: "Apakah yang termasuk di bawah Polisi Bersih 100%?",
     answer:
-      "We remove all construction debris, wipe down affected surfaces, vacuum dust from hacking works, and ensure no stains or residue remain. Whether it is a torch-on membrane job or a concealed pipe repair, your home is left clean and habitable before our team departs.",
+      "Kami membersihkan semua sisa binaan, mengelap permukaan, membersihkan habuk kerja hacking, dan memastikan tiada kesan kotoran tertinggal. Sama ada kerja torch-on membrane atau pembaikan paip tersembunyi — rumah anda bersih sebelum team kami selesai kerja.",
   },
   {
     question:
-      "How fast can ALIM dispatch for emergency plumbing in Ampang & Cheras?",
+      "Berapa pantas respons ALIM untuk tugasan kecemasan?",
     answer:
-      "Our Kerja Cepat team mobilizes 24/7 for burst pipes, clogged sinks, and hidden wall leaks. Most emergency calls in Ampang, Cheras, Kajang, and Semenyih receive on-site response within 1–2 hours depending on traffic and job severity.",
+      "Team Kerja Cepat kami sedia membantu 24/7 untuk masalah paip pecah, sinki sumbat, dan kebocoran tersembunyi. Kebanyakan panggilan kecemasan di Ampang, Cheras, Kajang, dan Semenyih menerima respons di lokasi dalam tempoh 1–2 jam.",
   },
 ] as const
 
@@ -136,3 +135,4 @@ export type LocalizedProject = (typeof localizedProjectsList)[number]
 export type AuthenticTestimonial = (typeof authenticTestimonials)[number]
 export type TrustSignal = (typeof trustSignalsCopy.signals)[number]
 export type TechnicalFaq = (typeof technicalFaqs)[number]
+

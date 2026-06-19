@@ -14,9 +14,9 @@ export function FloatingWhatsApp({ className }: FloatingWhatsAppProps) {
       href={buildEmergencyWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`WhatsApp emergency plumber — ${COMPANY.name}`}
+      aria-label={`Hubungi WhatsApp emergency plumber — ${COMPANY.name}`}
       className={cn(
-        "fixed right-4 bottom-4 z-50 flex size-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/30 transition-transform hover:scale-105 active:scale-95 sm:right-6 sm:bottom-6 sm:size-16",
+        "animate-pulse-subtle-green fixed right-4 bottom-4 z-50 flex size-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/30 transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 active:scale-95 sm:right-6 sm:bottom-6 sm:size-16",
         "focus-visible:ring-4 focus-visible:ring-whatsapp/40 focus-visible:outline-none",
         className
       )}

@@ -11,17 +11,17 @@ export function GuaranteesSection() {
   return (
     <section
       id="guarantees"
-      className="border-b border-border/60 bg-gradient-to-b from-primary/5 to-background py-16 sm:py-20"
+      className="section-py border-b border-border/40 bg-section-surface bg-section-shapes"
       aria-labelledby="guarantees-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="mb-2 text-sm font-medium text-primary">
+        <div className="section-header mx-auto max-w-2xl text-center">
+          <p className="mb-2 text-xs font-bold text-brand-accent uppercase tracking-widest">
             {trustSignalsCopy.overline}
           </p>
           <h2
             id="guarantees-heading"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl"
           >
             {trustSignalsCopy.headline}
           </h2>
@@ -36,21 +36,21 @@ export function GuaranteesSection() {
             return (
               <li
                 key={signal.id}
-                className="relative overflow-hidden rounded-2xl border-2 border-primary/20 bg-card p-6 shadow-lg shadow-primary/5 sm:p-8"
+                className="relative overflow-hidden rounded-[1.75rem] border border-slate-100 bg-white/70 backdrop-blur-sm p-6 sm:p-8 shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/5 hover:border-brand-accent/25"
               >
                 <div
-                  className="pointer-events-none absolute -top-10 -right-10 size-40 rounded-full bg-primary/8 blur-2xl"
+                  className="pointer-events-none absolute -top-10 -right-10 size-44 rounded-full bg-brand-accent/6 blur-2xl"
                   aria-hidden="true"
                 />
-                <div className="relative flex items-start gap-4">
-                  <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md shadow-primary/25">
+                <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start">
+                  <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-accent to-brand-primary text-white shadow-lg shadow-brand-accent/25 ring-4 ring-brand-accent/15">
                     <Icon className="size-7" aria-hidden="true" />
                   </span>
                   <div className="text-left">
-                    <h3 className="text-lg font-bold text-foreground sm:text-xl">
+                    <h3 className="text-xl font-extrabold text-brand-primary tracking-tight">
                       {signal.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {signal.description}
                     </p>
                   </div>

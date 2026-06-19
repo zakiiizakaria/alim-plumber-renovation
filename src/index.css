@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -25,37 +26,132 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-renovation: var(--renovation);
   --color-renovation-foreground: var(--renovation-foreground);
+  
+  /* Brand specific colors mapped to custom keys */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-bg: var(--brand-bg);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  
+  --animate-pulse-subtle: pulse-subtle 2s infinite ease-in-out;
+  --animate-pulse-subtle-orange: pulse-subtle-orange 2s infinite ease-in-out;
+  --animate-pulse-subtle-green: pulse-subtle-green 2s infinite ease-in-out;
+  --animate-bg-shift: bg-shift 12s ease infinite;
+  --animate-gradient-drift: gradient-drift 18s ease-in-out infinite;
+  --animate-accordion-down: accordion-down 0.25s cubic-bezier(0.87, 0, 0.13, 1);
+  --animate-accordion-up: accordion-up 0.25s cubic-bezier(0.87, 0, 0.13, 1);
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 oklch(0.65 0.22 195 / 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 0 10px oklch(0.65 0.22 195 / 0);
+    }
+  }
+
+  @keyframes pulse-subtle-orange {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 oklch(0.65 0.20 40 / 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 0 10px oklch(0.65 0.20 40 / 0);
+    }
+  }
+
+  @keyframes pulse-subtle-green {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 oklch(0.62 0.19 145 / 0.4);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 0 0 12px oklch(0.62 0.19 145 / 0);
+    }
+  }
+
+  @keyframes bg-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient-drift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(4%, -3%) scale(1.06);
+    }
+    66% {
+      transform: translate(-3%, 4%) scale(0.96);
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--accordion-panel-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--accordion-panel-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(0.99 0.005 280);
-  --foreground: oklch(0.22 0.02 280);
+  --radius: 0.75rem;
+  --brand-primary: oklch(0.35 0.18 240);
+  --brand-accent: oklch(0.62 0.24 195);
+  --brand-orange: oklch(0.65 0.20 40);
+  --brand-bg: oklch(0.98 0.008 240);
+
+  --background: var(--brand-bg);
+  --foreground: oklch(0.15 0.04 240);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 280);
+  --card-foreground: oklch(0.15 0.04 240);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 280);
-  --primary: oklch(0.6 0.25 280);
-  --primary-foreground: oklch(0.99 0.005 280);
-  --secondary: oklch(0.96 0.02 280);
-  --secondary-foreground: oklch(0.35 0.08 280);
-  --muted: oklch(0.96 0.015 280);
-  --muted-foreground: oklch(0.5 0.03 280);
-  --accent: oklch(0.94 0.04 280);
-  --accent-foreground: oklch(0.35 0.12 280);
+  --popover-foreground: oklch(0.15 0.04 240);
+  --primary: var(--brand-primary);
+  --primary-foreground: oklch(0.98 0.008 240);
+  --secondary: oklch(0.93 0.02 240);
+  --secondary-foreground: oklch(0.15 0.04 240);
+  --muted: oklch(0.93 0.02 240);
+  --muted-foreground: oklch(0.45 0.06 240);
+  --accent: oklch(0.90 0.03 195);
+  --accent-foreground: var(--brand-primary);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.91 0.02 280);
-  --input: oklch(0.91 0.02 280);
-  --ring: oklch(0.6 0.25 280);
+  --border: oklch(0.88 0.02 240);
+  --input: oklch(0.88 0.02 240);
+  --ring: var(--brand-accent);
   --whatsapp: oklch(0.62 0.19 145);
   --whatsapp-foreground: oklch(0.99 0.005 145);
-  --renovation: oklch(0.62 0.18 45);
-  --renovation-foreground: oklch(0.99 0.005 45);
+  --renovation: var(--brand-orange);
+  --renovation-foreground: oklch(0.99 0.005 250);
 }
 
 @layer base {
@@ -68,12 +164,97 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply text-foreground font-sans antialiased;
     margin: 0;
     min-height: 100svh;
+    background-color: oklch(0.95 0.02 230);
+    background-image:
+      linear-gradient(
+        155deg,
+        oklch(0.88 0.07 215) 0%,
+        oklch(0.94 0.035 240) 28%,
+        oklch(0.97 0.02 195) 52%,
+        oklch(0.93 0.045 35) 100%
+      );
+    background-attachment: fixed;
   }
 
   #root {
     min-height: 100svh;
   }
+}
+
+@utility bg-section-shapes {
+  background-image:
+    radial-gradient(ellipse 30% 24% at 100% 0%, oklch(0.62 0.24 195 / 0.08) 0%, transparent 72%),
+    radial-gradient(ellipse 26% 22% at 0% 100%, oklch(0.65 0.20 40 / 0.07) 0%, transparent 68%),
+    linear-gradient(
+      180deg,
+      oklch(0.35 0.18 240 / 0.03) 0%,
+      transparent 16%,
+      transparent 100%
+    );
+}
+
+@utility bg-section-shapes-alt {
+  background-image:
+    radial-gradient(ellipse 28% 22% at 0% 0%, oklch(0.35 0.18 240 / 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 24% 20% at 100% 100%, oklch(0.62 0.24 195 / 0.07) 0%, transparent 66%),
+    linear-gradient(
+      180deg,
+      oklch(0.65 0.20 40 / 0.025) 0%,
+      transparent 14%,
+      transparent 100%
+    );
+}
+
+@utility bg-hero-surface {
+  background-image:
+    linear-gradient(
+      145deg,
+      oklch(0.86 0.08 215 / 0.95) 0%,
+      oklch(0.94 0.035 240 / 0.82) 42%,
+      oklch(0.91 0.055 40 / 0.88) 100%
+    ),
+    radial-gradient(ellipse 90% 60% at 8% 88%, oklch(0.62 0.24 195 / 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 55% at 92% 12%, oklch(0.65 0.20 40 / 0.22) 0%, transparent 52%),
+    radial-gradient(ellipse 75% 65% at 50% 35%, oklch(0.35 0.18 240 / 0.10) 0%, transparent 68%);
+}
+
+@utility bg-section-surface {
+  background-image:
+    linear-gradient(180deg, oklch(1 0 0 / 0.68) 0%, oklch(0.99 0.006 240 / 0.42) 100%),
+    radial-gradient(ellipse 55% 45% at 12% 18%, oklch(0.62 0.24 195 / 0.12) 0%, transparent 72%),
+    radial-gradient(ellipse 48% 42% at 88% 82%, oklch(0.65 0.20 40 / 0.09) 0%, transparent 70%);
+}
+
+@utility bg-section-surface-alt {
+  background-image:
+    linear-gradient(180deg, oklch(0.98 0.012 195 / 0.55) 0%, oklch(1 0 0 / 0.62) 100%),
+    radial-gradient(ellipse 52% 44% at 88% 14%, oklch(0.35 0.18 240 / 0.11) 0%, transparent 68%),
+    radial-gradient(ellipse 46% 40% at 10% 86%, oklch(0.62 0.24 195 / 0.10) 0%, transparent 65%);
+}
+
+@utility bg-vibrant-mesh {
+  background-image:
+    linear-gradient(145deg, oklch(0.86 0.08 215) 0%, oklch(0.94 0.035 240) 45%, oklch(0.91 0.055 40) 100%),
+    radial-gradient(ellipse 90% 60% at 15% 85%, oklch(0.62 0.24 195 / 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 15%, oklch(0.65 0.20 40 / 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 70% at 50% 50%, oklch(0.35 0.18 240 / 0.08) 0%, transparent 65%);
+}
+
+@utility section-py {
+  @apply py-14 sm:py-16;
+}
+
+@utility section-py-compact {
+  @apply py-8 sm:py-10;
+}
+
+@utility section-py-hero {
+  @apply py-12 sm:py-16 lg:py-20;
+}
+
+@utility section-header {
+  @apply mb-8 sm:mb-9;
 }

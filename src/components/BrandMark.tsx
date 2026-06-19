@@ -11,28 +11,26 @@ export function BrandMark({ className, variant = "header" }: BrandMarkProps) {
 
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
-      <span
+      <img
+        src="/Alim_Logo.jpg"
+        alt={`${COMPANY.name} Logo`}
         className={cn(
-          "flex shrink-0 items-center justify-center rounded-lg bg-primary font-bold text-primary-foreground",
-          isFooter ? "size-11 text-base" : "size-10 text-sm"
+          "flex shrink-0 object-cover rounded-xl border border-slate-200/50 shadow-sm",
+          isFooter ? "size-12" : "size-11"
         )}
-        aria-hidden="true"
-      >
-        AP
-      </span>
+      />
       <div className="text-left leading-tight">
         <p
           className={cn(
-            "font-semibold",
-            isFooter ? "text-base text-background" : "text-sm text-foreground sm:text-base"
+            isFooter ? "font-bold text-base text-background" : "font-extrabold text-sm sm:text-base tracking-tight text-brand-primary"
           )}
         >
           ALIM Plumber
         </p>
         <p
           className={cn(
-            "text-xs",
-            isFooter ? "text-background/70" : "text-muted-foreground"
+            "text-[10px] font-bold tracking-wider",
+            isFooter ? "text-background/70" : "text-brand-orange uppercase"
           )}
         >
           &amp; Renovation
